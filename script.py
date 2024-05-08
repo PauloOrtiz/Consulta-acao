@@ -23,9 +23,11 @@ if st.button('Buscar Informações'):
 
         # Cria um DataFrame com uma lista contendo o dicionário
         dataframe = pd.DataFrame([info])
-
+        historic = acao.history()
+        dataframe2 = pd.DataFrame(historic)
         # Mostra o DataFrame no Streamlit
         st.dataframe(dataframe)
+        st.dataframe(dataframe2)
 
         # Cria um objeto BytesIO para salvar o DataFrame como Excel
         output = io.BytesIO()
